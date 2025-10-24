@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  odoo:
+    image: odoo:19
+    container_name: odoo-app
+    depends_on:
+      - db
+    volumes:
+      - odoo-data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ./enterprise-addons:/mnt/enterprise-addons
+      - ./custom-addons:/mnt/custom-addons
+    # Dokploy's network and labels will be added in the UI
+    # We use environment variables for the database connection
+    environment:
+      - HOST=$DB_HOST
+      - USER=$DB_USER
+      - PASSWORD=$DB_PASSWORD
+    restart: unless-stopped
+
+  db:
+    image: postgres:15
+    container_name: odoo-db
+    # We use Dokploy's environment tab for these
+    environment:
+      - POSTGRES_USER=$DB_USER
+      - POSTGRES_PASSWORD=$DB_PASSWORD
+      - POSTGRES_DB=postgres
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  odoo-data:
+  db-data:
