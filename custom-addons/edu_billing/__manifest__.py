@@ -1,7 +1,7 @@
 {
   "name": "Edu Billing",
   "summary": "Учёт оплат студентов: части платежей, водопад, пеня 1%/день",
-  "version": "16.0.1.0.0",
+  "version": "19.0.1.0.0",
   "category": "Education",
   "author": "UPSOFT",
   "license": "LGPL-3",
