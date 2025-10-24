@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_edu_student,access.edu.student,model_edu_student,base.group_user,1,1,1,1
+access_edu_contract,access.edu.contract,model_edu_contract,base.group_user,1,1,1,1
+access_edu_installment,access.edu.installment,model_edu_installment,base.group_user,1,1,1,1
+access_edu_payment,access.edu.payment,model_edu_payment,base.group_user,1,1,1,1
