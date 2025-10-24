@@ -17,6 +17,7 @@ services:
       - HOST=$DB_HOST
       - USER=$DB_USER
       - PASSWORD=$DB_PASSWORD
+      - PORT=$DB_PORT
     restart: unless-stopped
 
   db:
