@@ -1,0 +1,77 @@
+🧩 1️⃣ Create Main Folder
+mkdir C:\Odoo
+cd C:\Odoo
+
+
+🐍 2️⃣ Create Virtual Environment
+py -m venv venv
+
+If you see this error:
+
+running scripts is disabled on this system
+
+Run this:
+
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+Then activate the environment:
+
+venv\Scripts\activate
+
+
+To deactivate later:
+
+deactivate
+
+🧱 3️⃣ Upgrade Pip, Setuptools, and Wheel
+python -m pip install --upgrade pip setuptools wheel
+
+🧠 4️⃣ Clone Odoo 19 Community
+git clone -b 19.0 https://github.com/odoo/odoo.git odoo
+
+📦 5️⃣ Install Odoo Requirements
+cd odoo
+pip install -r requirements.txt
+
+🐘 6️⃣ Configure PostgreSQL
+
+If PostgreSQL is installed at:
+
+C:\Program Files\PostgreSQL\15\
+
+
+Then run:
+
+& "C:\Program Files\PostgreSQL\15\bin\psql.exe" -U postgres -c "CREATE ROLE odoo WITH LOGIN SUPERUSER PASSWORD 'odoo';"
+
+
+👉 When prompted, enter your PostgreSQL superuser (postgres) password.
+
+🧾 7️⃣ Create the Odoo Configuration File
+notepad C:\Odoo\odoo.conf
+
+
+▶️ 8️⃣ Run Odoo 19
+
+From the PowerShell terminal (inside C:\Odoo):
+
+Python odoo\odoo-bin -c C:\Odoo\odoo.conf --save
+
+
+Then open your browser and visit:
+👉 http://localhost:8069
+
+💼 9️⃣ (Optional) Clone Odoo 19 Enterprise (for Licensed Users)
+git clone -b 19.0 https://github.com/odoo/enterprise.git enterprise
+
+
+Then edit your config file and add this line:
+
+addons_path = C:\Odoo\odoo\addons,C:\Odoo\enterprise
+
+🧰 10️⃣ (Optional) Run Again After Adding Enterprise
+Python odoo\odoo-bin -c C:\Odoo\odoo.conf
+
+
+✅ At this point, Odoo 19 is fully installed and running on Windows!
+
