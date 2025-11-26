@@ -1,0 +1,192 @@
+/* Library Management Custom Styles */
+
+/* Fix kanban column width - prevent resizing during drag */
+.o_kanban_group {
+  min-width: 230px !important;
+  max-width: 230px !important;
+  padding: 0 4px !important;
+  overflow: visible !important;
+}
+
+/* Kanban column content area */
+.o_kanban_group .o_kanban_load_more {
+  padding: 8px;
+}
+
+/* Card container - proper spacing - flat design */
+.o_kanban_view .oe_kanban_card {
+  width: 200px !important;
+  margin: 8px auto !important;
+  transition: none !important;
+  position: relative;
+  background: white !important;
+  box-shadow: none !important;
+  border-radius: 4px !important;
+}
+
+/* No hover effect - keep it flat */
+.oe_kanban_card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: #d0d0d0 !important;
+}
+
+/* Show popup on hover */
+.library_book_card:hover .book_hover_popup {
+  display: block !important;
+  animation: fadeInRight 0.2s ease-out;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Prevent hover overflow outside column */
+.o_kanban_group {
+  overflow: visible !important;
+}
+
+/* Better kanban column header */
+.o_kanban_header {
+  padding: 12px 8px;
+  background: transparent;
+}
+
+.o_kanban_group .o_kanban_header_title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #2c3e50;
+}
+
+/* Remove background from kanban groups */
+.o_kanban_group {
+  background: transparent !important;
+}
+
+/* Card being dragged */
+.ui-sortable-helper {
+  transform: rotate(2deg) scale(1.05) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
+  opacity: 0.95 !important;
+  z-index: 9999 !important;
+}
+
+/* Drop placeholder */
+.ui-sortable-placeholder {
+  border: 2px dashed #3498db !important;
+  background: rgba(52, 152, 219, 0.08) !important;
+  visibility: visible !important;
+  border-radius: 8px !important;
+  margin: 8px auto !important;
+  height: 320px !important;
+}
+
+/* Popup styling */
+.book_hover_popup {
+  pointer-events: none;
+}
+
+.book_hover_popup::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 8px 8px 0;
+  border-color: transparent white transparent transparent;
+  filter: drop-shadow(-2px 0 2px rgba(0, 0, 0, 0.1));
+}
+
+/* Better drag cursor */
+.o_kanban_view .oe_kanban_card.o_draggable {
+  cursor: grab !important;
+}
+
+.o_kanban_view .oe_kanban_card.o_draggable:active {
+  cursor: grabbing !important;
+}
+
+/* No book cover hover effect */
+.oe_kanban_card:hover img {
+  transform: none;
+  transition: none;
+}
+
+/* Ensure consistent column width even when empty */
+.o_kanban_group.ui-sortable {
+  min-height: 300px;
+}
+
+/* Make sure dropdown menu appears above card */
+.oe_kanban_card .dropdown-menu {
+  z-index: 1050;
+}
+
+/* Category badge styling */
+.oe_kanban_card .badge {
+  font-weight: 500;
+  padding: 4px 8px;
+}
+
+/* Better dropdown button */
+.oe_kanban_card .dropdown button {
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.oe_kanban_card .dropdown button {
+  opacity: 0;
+}
+
+.oe_kanban_card:hover .dropdown button {
+  opacity: 1;
+}
+
+/* Metadata section styling */
+.oe_kanban_card .border-top {
+  border-color: #e9ecef !important;
+}
+
+/* Icon colors */
+.fa-user {
+  color: #3498db;
+}
+.fa-building {
+  color: #9b59b6;
+}
+.fa-calendar {
+  color: #e74c3c;
+}
+.fa-file-text {
+  color: #27ae60;
+}
+.fa-barcode {
+  color: #f39c12;
+}
+.fa-globe {
+  color: #16a085;
+}
+
+/* Clean description preview on card */
+.oe_kanban_card .o_field_html p {
+  margin: 0 !important;
+  color: #6c757d !important;
+  font-size: 10px !important;
+}
+
+/* Remove any HTML formatting from description preview */
+.oe_kanban_card .o_field_html * {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Demo Categories -->
+        <record id="category_fiction" model="library.category">
+            <field name="name">Fiction</field>
+            <field name="description">Fictional books including novels and short stories</field>
+            <field name="color">1</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="category_science" model="library.category">
+            <field name="name">Science</field>
+            <field name="description">Scientific books and research materials</field>
+            <field name="color">3</field>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="category_technology" model="library.category">
+            <field name="name">Technology</field>
+            <field name="description">Technology, programming, and computing books</field>
+            <field name="color">5</field>
+            <field name="sequence">30</field>
+        </record>
+
+        <record id="category_history" model="library.category">
+            <field name="name">History</field>
+            <field name="description">Historical books and biographies</field>
+            <field name="color">7</field>
+            <field name="sequence">40</field>
+        </record>
+
+        <record id="category_children" model="library.category">
+            <field name="name">Children</field>
+            <field name="description">Books for children and young adults</field>
+            <field name="color">9</field>
+            <field name="sequence">50</field>
+        </record>
+
+        <!-- Demo Books -->
+        <record id="book_1" model="library.book">
+            <field name="name">The Great Gatsby</field>
+            <field name="author">F. Scott Fitzgerald</field>
+            <field name="isbn">978-0-7432-7356-5</field>
+            <field name="description">&lt;p&gt;The Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, the novel depicts narrator Nick Carraway's interactions with mysterious millionaire Jay Gatsby and Gatsby's obsession to reunite with his former lover, Daisy Buchanan.&lt;/p&gt;</field>
+            <field name="category_id" ref="category_fiction"/>
+            <field name="publication_date">1925-04-10</field>
+            <field name="pages">180</field>
+            <field name="publisher">Charles Scribner's Sons</field>
+            <field name="language">en</field>
+        </record>
+
+        <record id="book_2" model="library.book">
+            <field name="name">A Brief History of Time</field>
+            <field name="author">Stephen Hawking</field>
+            <field name="isbn">978-0-553-38016-3</field>
+            <field name="description">&lt;p&gt;A Brief History of Time: From the Big Bang to Black Holes is a book on theoretical cosmology by English physicist Stephen Hawking. It was first published in 1988.&lt;/p&gt;</field>
+            <field name="category_id" ref="category_science"/>
+            <field name="publication_date">1988-04-01</field>
+            <field name="pages">256</field>
+            <field name="publisher">Bantam Dell Publishing Group</field>
+            <field name="language">en</field>
+        </record>
+
+        <record id="book_3" model="library.book">
+            <field name="name">Clean Code</field>
+            <field name="author">Robert C. Martin</field>
+            <field name="isbn">978-0-13-235088-4</field>
+            <field name="description">&lt;p&gt;Clean Code: A Handbook of Agile Software Craftsmanship is a programming book by Robert C. Martin. It presents a paradigm of software craftsmanship and describes best practices and patterns for writing clean, readable code.&lt;/p&gt;</field>
+            <field name="category_id" ref="category_technology"/>
+            <field name="publication_date">2008-08-01</field>
+            <field name="pages">464</field>
+            <field name="publisher">Prentice Hall</field>
+            <field name="language">en</field>
+        </record>
+
+        <record id="book_4" model="library.book">
+            <field name="name">Sapiens: A Brief History of Humankind</field>
+            <field name="author">Yuval Noah Harari</field>
+            <field name="isbn">978-0-062-31609-6</field>
+            <field name="description">&lt;p&gt;Sapiens: A Brief History of Humankind is a book by Yuval Noah Harari that explores the history of the human species from the emergence of Homo sapiens in Africa to the present.&lt;/p&gt;</field>
+            <field name="category_id" ref="category_history"/>
+            <field name="publication_date">2011-01-01</field>
+            <field name="pages">443</field>
+            <field name="publisher">Harvill Secker</field>
+            <field name="language">en</field>
+        </record>
+
+        <record id="book_5" model="library.book">
+            <field name="name">Harry Potter and the Philosopher's Stone</field>
+            <field name="author">J.K. Rowling</field>
+            <field name="isbn">978-0-7475-3269-9</field>
+            <field name="description">&lt;p&gt;Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J. K. Rowling. The first novel in the Harry Potter series, it follows Harry Potter as he discovers that he is a wizard.&lt;/p&gt;</field>
+            <field name="category_id" ref="category_children"/>
+            <field name="publication_date">1997-06-26</field>
+            <field name="pages">223</field>
+            <field name="publisher">Bloomsbury Publishing</field>
+            <field name="language">en</field>
+        </record>
+
+        <record id="book_6" model="library.book">
+            <field name="name">1984</field>
+            <field name="author">George Orwell</field>
+            <field name="isbn">978-0-452-28423-4</field>
+            <field name="description">&lt;p&gt;Nineteen Eighty-Four is a dystopian social science fiction novel and cautionary tale by English writer George Orwell, published in 1949.&lt;/p&gt;</field>
+            <field name="category_id" ref="category_fiction"/>
+            <field name="publication_date">1949-06-08</field>
+            <field name="pages">328</field>
+            <field name="publisher">Secker &amp; Warburg</field>
+            <field name="language">en</field>
+        </record>
+
+        <record id="book_7" model="library.book">
+            <field name="name">The Pragmatic Programmer</field>
+            <field name="author">Andrew Hunt, David Thomas</field>
+            <field name="isbn">978-0-13-595705-9</field>
+            <field name="description">&lt;p&gt;The Pragmatic Programmer: From Journeyman to Master is a book about computer programming and software engineering, written by Andrew Hunt and David Thomas.&lt;/p&gt;</field>
+            <field name="category_id" ref="category_technology"/>
+            <field name="publication_date">1999-10-30</field>
+            <field name="pages">352</field>
+            <field name="publisher">Addison-Wesley</field>
+            <field name="language">en</field>
+        </record>
+
+        <record id="book_8" model="library.book">
+            <field name="name">Cosmos</field>
+            <field name="author">Carl Sagan</field>
+            <field name="isbn">978-0-345-33135-0</field>
+            <field name="description">&lt;p&gt;Cosmos is a 1980 popular science book by astronomer and Pulitzer Prize-winning author Carl Sagan. Its 13 illustrated chapters explore the origin of the universe and our place within it.&lt;/p&gt;</field>
+            <field name="category_id" ref="category_science"/>
+            <field name="publication_date">1980-01-01</field>
+            <field name="pages">365</field>
+            <field name="publisher">Random House</field>
+            <field name="language">en</field>
+        </record>
+    </data>
+</odoo>

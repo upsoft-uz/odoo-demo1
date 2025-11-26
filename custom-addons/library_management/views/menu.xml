@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_library_root" name="Library" sequence="10" web_icon="library_management,static/description/icon.png"/>
+
+    <!-- Books Menu -->
+    <menuitem id="menu_library_books" name="Books" parent="menu_library_root" action="action_library_book" sequence="10"/>
+
+    <!-- Configuration Submenu -->
+    <menuitem id="menu_library_configuration" name="Configuration" parent="menu_library_root" sequence="90" groups="library_management.group_library_manager"/>
+
+    <menuitem id="menu_library_categories" name="Categories" parent="menu_library_configuration" action="action_library_category" sequence="10"/>
+</odoo>

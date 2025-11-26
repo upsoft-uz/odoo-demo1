@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Category Form View -->
+    <record id="view_library_category_form" model="ir.ui.view">
+        <field name="name">library.category.form</field>
+        <field name="model">library.category</field>
+        <field name="arch" type="xml">
+            <form string="Category">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(action_library_book)d" type="action" class="oe_stat_button" icon="fa-book" context="{'search_default_category_id': id}">
+                            <field name="book_count" widget="statinfo" string="Books"/>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="sequence"/>
+                            <field name="active"/>
+                        </group>
+                        <group>
+                            <field name="color" widget="color_picker"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Category List View with Drag Handle -->
+    <record id="view_library_category_list" model="ir.ui.view">
+        <field name="name">library.category.list</field>
+        <field name="model">library.category</field>
+        <field name="arch" type="xml">
+            <list string="Categories" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="book_count"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Category Action -->
+    <record id="action_library_category" model="ir.actions.act_window">
+        <field name="name">Categories</field>
+        <field name="res_model">library.category</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first category
+            </p>
+            <p>
+                Categories help organize books by genre, topic, or any classification you prefer.
+            </p>
+        </field>
+    </record>
+</odoo>
