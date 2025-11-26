@@ -36,7 +36,7 @@ services:
       - odoo-data:/var/lib/odoo
       - ./config:/etc/odoo # <- your odoo.conf lives here
       - ./enterprise-addons:/mnt/enterprise-addons
-      - ./custom-addons:/mnt/custom-addons
+      - ./custom-addons/library_management:/mnt/custom-addons/library_management
       - ./:/mnt/src
     networks: [backend]
     restart: unless-stopped
