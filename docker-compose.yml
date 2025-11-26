@@ -34,9 +34,10 @@ services:
       # - PROXY_MODE=True   # (already set in odoo.conf)
     volumes:
       - odoo-data:/var/lib/odoo
-      - ./config:/etc/odoo              # <- your odoo.conf lives here
+      - ./config:/etc/odoo # <- your odoo.conf lives here
       - ./enterprise-addons:/mnt/enterprise-addons
       - ./custom-addons:/mnt/custom-addons
+      - ./:/mnt/src
     networks: [backend]
     restart: unless-stopped
     # For local tests (without Dokploy/Traefik), uncomment:
